@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+
+  <div class="site-content">
+  <nav>
+    <input type="checkbox" id="nav" class="hidden"/>
+    <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+    <div class="nav-container">
+      <ul>
+        <li><a href="/" class="title">0lxb</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+
+  <div class="site-content">
+
+  {{ content }}
+
+  <div style="clear:both;"></div>
+  <div class="poweredby">
+      <a href="/legal">Legal</a> &#8226;
+      <a href="/blog/rss.xml">RSS</a>
+      <br><br>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+      <br><br>
+      <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Qiuxi's Blog</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+  </div>
+
+  </div>
+  </body>
+</html>

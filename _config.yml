@@ -1,0 +1,35 @@
+name: qiuxi
+author: qiuxi
+title: "丘夕的Blog"
+description: "Qiuxi's personal website and blog."
+keywords: blog programming technology talks
+tagline: A Netflix major with a Computer Science problem.
+logo: img/me.jpg
+
+url: https://blog.hikdev.com
+
+plugins: [jekyll-paginate]
+paginate: 10
+paginate_path: "blog/page:num"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  hard_wrap: false
+
+exclude: ["CNAME", "README.md"]
+
+disqus: 0lxb
+analytics: UA-35213531-1
+
+# Liquid-LaTeX plugin
+liquid_latex:
+  debug: true
+  density: 200
+  output_directory: /res/latex
+  temp_filename: "latex_temp"
+  usepackages: "amsmath"

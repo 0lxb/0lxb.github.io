@@ -1,0 +1,28 @@
+---
+title: Home
+layout: base
+---
+<aside>
+  <div class="logo-container">
+    <a class="logo"
+       href="{{ page.baseurl }}"
+       style="background-image: url('{{ site.baseurl }}{{ site.logo }}')"></a>
+  </div>
+  <ul class="fa-ul main-list">
+      <li class="main-list-item">
+          <span class="fa fa-github fa-lg main-list-item-icon"></span>
+          <a href="https://github.com/0lxb">GitHub</a>
+      </li>
+      <li class="main-list-item">
+          <span class="fa fa-twitter fa-lg main-list-item-icon"></span>
+          <a href="https://twitter.com/0xlxb">Twitter</a>
+      </li>
+      <li class="main-list-item">
+          <span class="fa fa-envelope fa-lg main-list-item-icon"></span>
+          <a href="mailto:luoxiaobing0926@gmail.com">Email</a>
+      </li>
+  </ul>
+</aside>
+
+{% capture biosketch %}{% include biosketch.md %}{% endcapture %}
+{{ biosketch | markdownify }}
