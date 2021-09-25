@@ -20,6 +20,7 @@ tags:
 
 ## 1. 读取一个数字
 * 案例1
+
 ```c
 #include <stdio.h>
 
@@ -45,6 +46,7 @@ You entered 1.
 ```
 
 * 案例2
+
 ```c
 #include <stdio.h>
 
@@ -82,6 +84,7 @@ number: enter a number: enter a number: ^C
 
 ## 2. 读取一个字符串
 * 案例3
+
 ```c
 #include <stdio.h>
 
@@ -110,6 +113,7 @@ Hello Christopher-Joseph-Montgomery!
 > 规则2: 不小心使用 scanf()可能会很危险。始终将字段宽度用于解析为字符串的转换（如 %s）。
 
 * 案例4
+
 ```c
 #include <stdio.h>
 
@@ -134,6 +138,7 @@ Hello Martin!
 * %[^.]: The ^ negates the list, so this means parse as long as there is no . in the input.
 
 * 案例5
+
 ```c
 #include <stdio.h>
 
@@ -153,6 +158,7 @@ Hello ÿ¦e!
 ```
 
 * 案例6
+
 ```c
 #include <stdio.h>
 
@@ -169,6 +175,7 @@ int main(void)
 ## 3. fgets
 
 * 案例7
+
 ```c
 #include <stdio.h>
 
@@ -191,6 +198,7 @@ Hello Bob
 ```
 
 * 案例8
+
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -214,6 +222,7 @@ Hello Bob Belcher!
 ```
 
 * 案例9
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -247,6 +256,7 @@ You entered 15.
 ```
 
 * 案例10
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -304,6 +314,7 @@ You entered 0.
 > 规则4: scanf()是一个非常强大的函数。
 
 * 案例11
+
 ```c
 #include <stdio.h>
 
@@ -326,6 +337,7 @@ int main(void)
 ```
 
 * 案例12
+
 ```c
 #include <stdio.h>
 
@@ -340,6 +352,6 @@ int main(void)
 ```
 
 ## 参考
-http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
-https://wizardforcel.gitbooks.io/re-for-beginners/content/Part-I/Chapter-07.html
-http://c.biancheng.net/view/160.html
+* http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
+* https://wizardforcel.gitbooks.io/re-for-beginners/content/Part-I/Chapter-07.html
+* http://c.biancheng.net/view/160.html
