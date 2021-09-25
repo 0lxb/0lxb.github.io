@@ -20,7 +20,7 @@ tags:
 
 ## 1. 读取一个数字
 * 案例1
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -45,7 +45,7 @@ You entered 1.
 ```
 
 * 案例2
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -82,7 +82,7 @@ number: enter a number: enter a number: ^C
 
 ## 2. 读取一个字符串
 * 案例3
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -110,7 +110,7 @@ Hello Christopher-Joseph-Montgomery!
 > 规则2: 不小心使用 scanf()可能会很危险。始终将字段宽度用于解析为字符串的转换（如 %s）。
 
 * 案例4
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -134,7 +134,7 @@ Hello Martin!
 * %[^.]: The ^ negates the list, so this means parse as long as there is no . in the input.
 
 * 案例5
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -153,7 +153,7 @@ Hello ÿ¦e!
 ```
 
 * 案例6
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -169,7 +169,7 @@ int main(void)
 ## 3. fgets
 
 * 案例7
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -191,7 +191,7 @@ Hello Bob
 ```
 
 * 案例8
-```c {.line-numbers}
+```c
 #include <stdio.h>
 #include <string.h>
 
@@ -214,7 +214,7 @@ Hello Bob Belcher!
 ```
 
 * 案例9
-```c {.line-numbers}
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -247,7 +247,7 @@ You entered 15.
 ```
 
 * 案例10
-```c {.line-numbers}
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -304,7 +304,7 @@ You entered 0.
 > 规则4: scanf()是一个非常强大的函数。
 
 * 案例11
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
@@ -326,7 +326,7 @@ int main(void)
 ```
 
 * 案例12
-```c {.line-numbers}
+```c
 #include <stdio.h>
 
 int main(void)
