@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "ubuntu rootfs"
-subtitle:   " \"制作rootfs\""
+title:      "根文件系统系列之ubuntu rootfs"
+subtitle:   "ubuntu rootfs制作指南"
 author:     "qiuxi"
 catalog: true
 tags:
@@ -9,21 +9,25 @@ tags:
     - rootfs
 ---
 
-## 简介
+ubuntu rootfs制作指南
 
-## 流程
-### ubuntu基础包
+## 简介
+* 本文记录的是基于ubuntu-base制作rootfs的脚本
+
+## 依赖
 * [ubuntu-base-20.04.3-base-arm64.tar.gz](http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.3-base-arm64.tar.gz)
 
 * [ch-mount.sh](https://raw.githubusercontent.com/psachin/bash_scripts/master/ch-mount.sh)
 
-### 关键步骤
-* sudo cp -av /usr/bin/qemu-aarch64-static ./rootfs/usr/bin
-* sudo cp -av /run/systemd/resolve/stub-resolv.conf ./rootfs/etc/resolv.conf
-
-* change rootfs
+## 步骤
 ```
+# change rootfs
 sudo chroot ./rootfs/
+ch-mount.sh
+
+# Copy
+cp -av /usr/bin/qemu-aarch64-static ./rootfs/usr/bin
+cp -av /run/systemd/resolve/stub-resolv.conf ./rootfs/etc/resolv.conf
 
 # Change the setting here
 USER=qiuxi
@@ -56,16 +60,15 @@ apt-get install sudo ssh
 apt-get install vim git
 apt-get install bash-completion htop alsa-utils python3 golang
 
-# auto eth0
+# Config auto eth0
 echo "auto eth0" > /etc/network/interfaces.d/eth0
 echo "iface eth0 inet dhcp" >> /etc/network/interfaces.d/eth0
-# echo "nameserver 127.0.1.1" > /etc/resolv.conf
 
-# resolvconf and tzdata
+# Config resolvconf and tzdata
 dpkg-reconfigure resolvconf
 dpkg-reconfigure tzdata
 
-# enable login at serial console
+# Enable login at serial console
 cat << EOF > /etc/init.d/ttyS0.conf
 start on stopped rc or RUNLEVEL=[12345]
 stop on runlevel [!12345]
@@ -74,13 +77,10 @@ exec /sbin/getty -L 115200 ttyS0 vt102
 EOF
 sudo start ttyS0
 
-```
-* add fstab
-```
+# Add fstab
 echo "/dev/mmcblk0p2 / ext4 defaults,noatime 0 1" >> ./rootfs/etc/fstab
-```
-* Create a file /etc/dpkg/dpkg.cfg.d/01_nodoc which specifies the desired filters
-```
+
+# Create a file /etc/dpkg/dpkg.cfg.d/01_nodoc which specifies the desired filters
 cat << EOF > ./rootfs/etc/dpkg/dpkg.cfg.d/01_nodoc
 path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -92,17 +92,16 @@ path-exclude /usr/share/info/*
 path-exclude /usr/share/lintian/*
 path-exclude /usr/share/linda/*
 EOF
-```
-* rm useless
-```
+
+# rm useless
 sudo find rootfs/usr/share/doc -depth -type f ! -name copyright|xargs rm || true
 sudo find rootfs/usr/share/doc -empty|xargs rmdir || true
 sudo rm -rf rootfs/usr/share/man/* rootfs/usr/share/groff/* rootfs/usr/share/info/*
 sudo rm -rf rootfs/usr/share/lintian/* rootfs/usr/share/linda/* rootfs/var/cache/man/* rootfs/var/cache/apt/archives/*
-```
-* ext4 img
-```
+
+# make ext4 img
 dd if=/dev/zero of=rootfs.ext4 bs=1M count=2048
+mkfs.ext4 rootfs.ext4
 mkdir -p ext4_dir
 mount -t ext4 ./rootfs.ext4 ./ext4_dir
 cp -rf ./rootfs/* ./ext4_dir/

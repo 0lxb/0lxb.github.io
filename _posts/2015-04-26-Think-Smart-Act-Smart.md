@@ -1,10 +1,12 @@
 ---
 title: Think Smart Act Smart
-subtitle:   " \"《解决问题最简单的方法》阅读笔记\""
+subtitle:   "《解决问题最简单的方法》阅读笔记"
 layout: post
 categories: life book
 tags: 2015
 ---
+
+《解决问题最简单的方法》阅读笔记
 
 ## 专注
 

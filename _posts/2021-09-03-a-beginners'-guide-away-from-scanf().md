@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "A beginners' guide away from scanf()"
-subtitle:   " \"远离scanf的入门指南\""
+subtitle:   "远离scanf的入门指南"
 author:     "qiuxi"
 catalog: true
 tags:
@@ -9,6 +9,7 @@ tags:
     - c
 ---
 
+远离scanf的入门指南
 
 ## 参考
 http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html
