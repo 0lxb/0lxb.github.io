@@ -6,7 +6,7 @@ keywords: blog programming technology talks
 tagline: A Netflix major with a Computer Science problem.
 logo: img/me.jpg
 
-url: https://blog.hikdev.com
+url: https://hikdev.com
 
 plugins: [jekyll-paginate]
 paginate: 10

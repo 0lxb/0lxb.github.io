@@ -2,7 +2,8 @@
 layout: contentbase
 ---
 <h1>{{ page.title }}</h1>
-<em>qiuxi &bull; {{ page.date | date_to_long_string }}</em>
+{% if page.subtitle %}<p><strong>{{ page.subtitle }}</strong></p>{% endif %}
+<em>qiuxi &bull; {{ page.date | date: "%Y-%m-%d" }}</em>
 
 {{ content }}
 
